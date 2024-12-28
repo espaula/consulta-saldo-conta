@@ -1,6 +1,14 @@
 # Serviço de Consulta de Saldo
 
-Este é um serviço simples de consulta de saldo de conta. Ele expõe um endpoint RESTful que recebe um `account_id` e retorna o saldo da conta.
+Este é um serviço simples de consulta de saldo de conta. Ele expõe um endpoint RESTful que recebe um `id_conta` e retorna o saldo da conta.
+
+# Tecnologias Utilizadas
+     Python 3.x
+     Flask para implementação do serviço web.
+     Prometheus Flask Exporter para monitoramento de métricas.
+     Pytest para testes unitários.
+     Docker & Docker Compose.
+     HTTP Client para comunicação com a API Mock.
 
 ## Pré-requisitos
 
@@ -15,8 +23,7 @@ Este é um serviço simples de consulta de saldo de conta. Ele expõe um endpoin
    ```bash
    pip install -r requirements.txt
   
- ````bash
-      docker-compose up --build
+   docker-compose up --build
 
 ## Acessar os Endpoints
 API Principal: http://localhost:5000/saldo/<id_conta>
