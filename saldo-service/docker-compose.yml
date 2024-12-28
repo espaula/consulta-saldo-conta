@@ -1,0 +1,26 @@
+#version: '3.8'
+services:
+  mock_api:
+    build:
+      context: .
+      dockerfile: Dockerfile.mock
+    ports:
+      - "5001:5001"
+
+  saldo_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mock_api
+
+
+  test_service:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    depends_on:
+      - saldo_service
+    command: ["pytest"]
